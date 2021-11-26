@@ -1,10 +1,16 @@
 <?php
-function return_calls($func,$arr){
+function return_calls($func = null,$arr = null){
     static $i = 0;
-  if(!call_user_func($func,$arr)){
-      return FALSE;
-      return $i++;
-  }else{
-    return $i++;
+    if ($func == null || $arr == null){
+        return FALSE;
+    }else{
+        call_user_func($func,$arr);
+        return $i++;
+    }
+    
+
+
   }
-}
+
+
+
